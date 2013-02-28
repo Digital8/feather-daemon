@@ -1,0 +1,11 @@
+#! /usr/bin/env coffee
+
+dnode = require 'dnode'
+
+node = dnode.connect 30000
+
+node.on 'remote', (remote) ->
+  
+  remote.job id: 'test', graphics: {}
+  
+  node.end()
